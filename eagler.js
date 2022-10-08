@@ -18,8 +18,8 @@ const serverPlayers = ["Welcome to my", "ayunMultiPort-powered", "Eaglercraft se
 const serverIcon = "icon.png"; // set to null for no icon. MUST be 64x64. can be a url, if you want...
 const httpPort = 8080;
 const timeout = 10000;
-const changeProtocol = true;
-const removeSkin = true;
+const changeProtocol = true; // (set to false if forwarding to a java port of eaglerbungee)
+const removeSkin = true; //filter skin packet (set to false if forwarding to a java port of eaglerbungee)
 const prefix = "www";
 
 let iconBuff = null;
@@ -62,7 +62,7 @@ const httpsrv = require("http").createServer((req,res)=>{
 
 const wss = new WebSocketServer({ server: httpsrv });
 
-const motdBase = {data:{motd:serverMotd,cache:true,max:serverMaxPlayers,players:serverPlayers,icon:serverIcon!=null,online:serverOnlinePlayers},vers:"0.2.0",name:serverName,time:0,type:"motd",brand:"Eagtek",uuid:crypto.randomUUID(),cracked:true};
+const motdBase = {data:{motd:serverMotd,cache:true,max:serverMaxPlayers,players:serverPlayers,icon:serverIcon!=null,online:serverOnlinePlayers},vers:"4.2.0",name:serverName,time:0,type:"motd",brand:"Eagtek",uuid:crypto.randomUUID(),cracked:true};
 function getMotd(){
   motdBase.time = Date.now();
   return JSON.stringify(motdBase);
