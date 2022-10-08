@@ -129,6 +129,7 @@ server.listen(listenPort, function() {
 
 server.on('connection', function(socket) {
   let client = null;
+  console.log("Connection Made")
 
   let determinedClient = false;
 
@@ -192,7 +193,7 @@ function makeClient(host,port,socket,cb){
   });
 
   client.on('error', function(err) {
-    //console.log(`Client Error: ${err}`);
+    console.log(`Client Error: ${err}`);
   });
 }
 
@@ -211,6 +212,6 @@ function makeWsMcClient(ws,cb){
   });
 
   client.on('error', function(err) {
-    //console.log(`Client Error: ${err}`);
+    console.log(`Client Error: ${err}`);
   });
 }
