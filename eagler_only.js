@@ -7,7 +7,7 @@ const bufferReplace = require('buffer-replace');
 const crypto = require('crypto');
 const Jimp = require('jimp');
 
-const listenPort = 25565;
+const listenPort = 80;
 const mcHost = "localhost";
 const mcPort = 25569;
 const serverName = "ayunMultiPort Server";
